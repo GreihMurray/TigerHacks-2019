@@ -1,0 +1,133 @@
+<html>
+
+	<head>
+		<script src="functions.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+		<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+		<script src="html2canvas.js"></script>
+		
+		<title>VirtualBoxes</title>
+		
+		<style>
+			#color{
+				background-color: gray;
+				height: 100%;							<!-- this section forms the animation of the color -->
+				background-size: 80% 100%;
+				-webkit-animation: MovingColor 8s linear infinite alternate;
+			}
+			@-webkit-keyframes MovingColor{
+				0% {background-color: blue; 0% 50%;}
+				50% {background-color: skyblue; 100% 50%;}      <!-- this section makes the animation happen -->
+				100% {background-color: teal; 0% 50%;}
+			}
+			.text{
+				border:3px solid white;
+				text-align:center;
+				background-color:rgb(50,50,50,.7);	
+				color:rgb(175,175,175);
+				padding:5px;
+				margin:10px;
+			}
+			.canvas__container {
+			  height: 100%;
+			  position: relative;
+			  width: 100%;
+			}
+			.canvas__canvas {
+			  height: 100%;
+			  position: relative;
+			  width: 100%;
+			  z-index: 1;
+			}
+			.canvas__mirror {
+			  height: 100%;
+			  left: 0;
+			  position: absolute;
+			  top: 0;
+			  width: 100%; 
+			}
+			.colors{
+			    width:44px;
+			    height:23px;
+			}
+			input[type="file"] {
+                display: none;
+            }
+		</style>
+		
+	</head>
+
+	<body id="color">
+		
+		<div class="jumbotron" style="background-color:rgb(120,120,120);height:200px;color:rgb(255,255,255);z-index:200;margin-top:-35px">
+			<input type="color" id="ifStates" name="ifStates" value="#2FAD23" class="colors">
+			<label for="ifStates">If Statements</label>
+			
+			<input type="color" id="elifStates" name="elifStates" value="#2FAD23" class="colors">
+			<label for="elifStates">Else If Statements</label>
+			
+			<input type="color" id="elseStates" name="elseStates" value="#2FAD23" class="colors">
+			<label for="elseStates">Else Statements</label>
+			
+			<input type="color" id="switchStates" name="switchStates" value="#2FAD23" class="colors">
+			<label for="switchStates">Switch Statements</label>
+			
+			<input type="color" id="whileStates" name="whileStates" value="#2FAD23" class="colors">
+			<label for="whileStates">While Statements</label>
+			<br>
+			<input type="color" id="dowhiStates" name="dowhiStates" value="#2FAD23" class="colors">
+			<label for="dowhiStates">Do While Statements</label>
+			
+			<input type="color" id="forStates" name="forStates" value="#2FAD23" class="colors">
+			<label for="forStates">For Statements</label>
+			
+			<input type="color" id="tryStates" name="tryStates" value="#2FAD23" class="colors">
+			<label for="tryStates">Try Statements</label>
+			
+			<input type="color" id="catchStates" name="catchStates" value="#2FAD23" class="colors">
+			<label for="catchStates">Catch Statements</label>
+			
+			<input type="color" id="slcStates" name="slcStates" value="#2FAD23" style="visibility:hidden;height:0px;width:0px;">
+			<input type="color" id="mlcStates" name="mlcStates" value="#2FAD23" class="colors" style="margin-left:-10px">
+			<label for="mlcStates">Multi Line Comments</label>
+			<br>
+			<input type="color" id="background" name="background" value="#2FAD23" v>
+			<label for="background">Background</label>
+			
+			<button onclick="colors()" style="margin-right:5px" class="btn btn-outline-light">Apply Colors</button>
+			
+			<button onClick="clearer()" style="margin-right:5px" class="btn btn-outline-light">Clear</button>
+			
+			<button class="btn btn-outline-light" style="margin-right:5px;" onclick="clickbait()">Select Files</button>
+			
+			<input type="file" id="fileOpen" name="fileOpen" accept=".txt" height:1px; width:1px;visibility:hidden;/>
+		</div>
+		
+		<center>
+			<div class="bigDiv" id="bigDiv" style="background-color:rgb(0,0,0,0)">
+			</div>
+		</center>
+		
+		<br>
+		
+		<center>
+			<a href="animated.html" class="text">You can return to the home screen here</a>
+		</center>
+		<br>
+	</body>
+	
+	<script>
+		document.getElementById("fileOpen").addEventListener('change',readSingleFile, false);
+		
+		function clickbait(){
+		    document.getElementById("fileOpen").click();
+		}
+	</script>
+	
+	<footer>
+	
+	</footer>
+
+</html>

@@ -1,0 +1,32 @@
+.bigDiv{
+	max-height:90%;
+	max-width:80%;
+	width:90%;
+	height:90%;
+	min-height:80%;
+	min-width:90%;
+	border:2px solid black;
+	background-color:blue;
+	position:relative;
+	overflow:hidden;
+	padding:10px;
+}
+
+.colorDiv{
+	background-color:red;
+	max-height:100px;
+	min-height:100px;
+	height: 100px;
+}
+
+p{
+	z-index: 400;
+	border: 2 px solid green;
+}
+
+label{
+	margin:5px;
+	max-width:175px;
+	min-width:100px;
+	width:175px;
+}
